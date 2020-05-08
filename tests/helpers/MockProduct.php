@@ -21,6 +21,11 @@ class MockProduct extends ModelIdentifier
     public $price;
 
     /**
+     * @var bool
+     */
+    public $accumulates;
+
+    /**
      * @var float
      */
     public $weight;
@@ -31,12 +36,14 @@ class MockProduct extends ModelIdentifier
      * @param int|string $id
      * @param string     $name
      * @param float      $price
+     * @param bool       $accumulates
      */
-    public function __construct($id = 455, $name = 'Sample Item', $price = 100.99, $weight = 0)
+    public function __construct($id = 455, $name = 'Sample Item', $price = 100.99, $accumulates = false, $weight = 0)
     {
         $this->id = $id;
         $this->name = $name;
         $this->price = $price;
+        $this->accumulates = $accumulates;
         $this->weight = $weight;
     }
 

@@ -263,6 +263,8 @@ class CartConditionTest extends PHPUnit\Framework\TestCase  {
             'name' => 'Sample Item 1',
             'price' => 100,
             'quantity' => 1,
+            'accumulates' => false,
+            'frequency' => null,
             'attributes' => array(),
             'conditions' => $condition1
         );
@@ -296,6 +298,8 @@ class CartConditionTest extends PHPUnit\Framework\TestCase  {
             'name' => 'Sample Item 1',
             'price' => 100,
             'quantity' => 1,
+            'accumulates' => false,
+            'frequency' => null,
             'attributes' => array(),
             'conditions' => [$itemCondition1, $itemCondition2, $itemCondition3]
         );
@@ -330,6 +334,8 @@ class CartConditionTest extends PHPUnit\Framework\TestCase  {
             'name' => 'Sample Item 1',
             'price' => 100,
             'quantity' => 1,
+            'accumulates' => false,
+            'frequency' => null,
             'attributes' => array(),
             'conditions' => [$itemCondition2, $itemCondition3]
         );
@@ -358,6 +364,8 @@ class CartConditionTest extends PHPUnit\Framework\TestCase  {
             'name' => 'Sample Item 1',
             'price' => 100,
             'quantity' => 1,
+            'accumulates' => false,
+            'frequency' => null,
             'attributes' => array(),
             'conditions' => [$itemCondition2]
         );
@@ -386,6 +394,8 @@ class CartConditionTest extends PHPUnit\Framework\TestCase  {
             'name' => 'Sample Item 1',
             'price' => 20,
             'quantity' => 1,
+            'accumulates' => false,
+            'frequency' => null,
             'attributes' => [],
             'conditions' => [
                 $condition,
@@ -419,6 +429,8 @@ class CartConditionTest extends PHPUnit\Framework\TestCase  {
             'name' => 'Sample Item 1',
             'price' => 100,
             'quantity' => 1,
+            'accumulates' => false,
+            'frequency' => null,
             'attributes' => array(),
         );
 
@@ -455,6 +467,8 @@ class CartConditionTest extends PHPUnit\Framework\TestCase  {
             'name' => 'Sample Item 1',
             'price' => 100,
             'quantity' => 1,
+            'accumulates' => false,
+            'frequency' => null,
             'attributes' => array(),
         );
 
@@ -491,6 +505,8 @@ class CartConditionTest extends PHPUnit\Framework\TestCase  {
             'name' => 'Sample Item 1',
             'price' => 100,
             'quantity' => 1,
+            'accumulates' => false,
+            'frequency' => null,
             'attributes' => array(),
             'conditions' => [$itemCondition1, $itemCondition2]
         );
@@ -522,6 +538,8 @@ class CartConditionTest extends PHPUnit\Framework\TestCase  {
             'name' => 'Sample Item 1',
             'price' => 100,
             'quantity' => 1,
+            'accumulates' => false,
+            'frequency' => null,
             'attributes' => array(),
             'conditions' => $itemCondition // <--not in array format
         );
@@ -556,6 +574,8 @@ class CartConditionTest extends PHPUnit\Framework\TestCase  {
             'name' => 'Sample Item 1',
             'price' => 100,
             'quantity' => 1,
+            'accumulates' => false,
+            'frequency' => null,
             'attributes' => array(),
             'conditions' => [$itemCondition1, $itemCondition2]
         );
@@ -596,6 +616,8 @@ class CartConditionTest extends PHPUnit\Framework\TestCase  {
             'name' => 'Sample Item 1',
             'price' => 100,
             'quantity' => 1,
+            'accumulates' => false,
+            'frequency' => null,
             'attributes' => array(),
         );
 
@@ -633,6 +655,8 @@ class CartConditionTest extends PHPUnit\Framework\TestCase  {
             'name' => 'Sample Item 1',
             'price' => 100,
             'quantity' => 1,
+            'accumulates' => false,
+            'frequency' => null,
             'attributes' => array(),
         );
 
@@ -682,6 +706,8 @@ class CartConditionTest extends PHPUnit\Framework\TestCase  {
             'name' => 'Sample Item 1',
             'price' => 100,
             'quantity' => 1,
+            'accumulates' => false,
+            'frequency' => null,
             'attributes' => array(),
         );
 
@@ -729,6 +755,8 @@ class CartConditionTest extends PHPUnit\Framework\TestCase  {
             'name' => 'Sample Item 1',
             'price' => 100,
             'quantity' => 1,
+            'accumulates' => false,
+            'frequency' => null,
             'attributes' => array(),
         );
 
@@ -756,6 +784,8 @@ class CartConditionTest extends PHPUnit\Framework\TestCase  {
             'name' => 'Sample Item 1',
             'price' => 100,
             'quantity' => 1,
+            'accumulates' => false,
+            'frequency' => null,
             'attributes' => array(),
         );
 
@@ -792,6 +822,8 @@ class CartConditionTest extends PHPUnit\Framework\TestCase  {
             'name' => 'Sample Item 1',
             'price' => 100,
             'quantity' => 1,
+            'accumulates' => false,
+            'frequency' => null,
             'attributes' => array(),
         );
 
@@ -896,6 +928,8 @@ class CartConditionTest extends PHPUnit\Framework\TestCase  {
                 'name' => 'Sample Item 1',
                 'price' => 67.99,
                 'quantity' => 1,
+                'accumulates' => true,
+                'frequency' => 1,
                 'attributes' => array()
             ),
             array(
@@ -903,6 +937,8 @@ class CartConditionTest extends PHPUnit\Framework\TestCase  {
                 'name' => 'Sample Item 2',
                 'price' => 69.25,
                 'quantity' => 1,
+                'accumulates' => false,
+                'frequency' => null,
                 'attributes' => array()
             ),
             array(
@@ -910,6 +946,8 @@ class CartConditionTest extends PHPUnit\Framework\TestCase  {
                 'name' => 'Sample Item 3',
                 'price' => 50.25,
                 'quantity' => 1,
+                'accumulates' => true,
+                'frequency' => 1,
                 'attributes' => array()
             ),
         );

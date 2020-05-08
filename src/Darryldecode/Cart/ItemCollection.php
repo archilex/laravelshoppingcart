@@ -39,6 +39,10 @@ class ItemCollection extends Collection
      */
     public function getPriceSum()
     {
+        if ($this->accumulates) {
+            return Helpers::formatValue($this->price * $this->quantity * $this->frequency, $this->config['format_numbers'], $this->config);
+        }
+        
         return Helpers::formatValue($this->price * $this->quantity, $this->config['format_numbers'], $this->config);
     }
 
@@ -128,6 +132,9 @@ class ItemCollection extends Collection
      */
     public function getPriceSumWithConditions($formatted = true)
     {
+        if ($this->accumulates) {
+            return Helpers::formatValue($this->getPriceWithConditions(false) * $this->quantity * $this->frequency, $formatted, $this->config);
+        }
         return Helpers::formatValue($this->getPriceWithConditions(false) * $this->quantity, $formatted, $this->config);
     }
 }

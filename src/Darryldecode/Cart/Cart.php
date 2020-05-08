@@ -148,13 +148,15 @@ class Cart
      * @param string $name
      * @param float $price
      * @param int $quantity
+     * @param bool $accumulates
+     * @param int $frequency
      * @param array $attributes
      * @param CartCondition|array $conditions
      * @param string $associatedModel
      * @return $this
      * @throws InvalidItemException
      */
-    public function add($id, $name = null, $price = null, $quantity = null, $attributes = array(), $conditions = array(), $associatedModel = null)
+    public function add($id, $name = null, $price = null, $quantity = null, $accumulates = null, $frequency = null, $attributes = array(), $conditions = array(), $associatedModel = null)
     {
         // if the first argument is an array,
         // we will need to call add again
@@ -168,6 +170,8 @@ class Cart
                         $item['name'],
                         $item['price'],
                         $item['quantity'],
+                        $item['accumulates'],
+                        $item['frequency'],
                         Helpers::issetAndHasValueOrAssignDefault($item['attributes'], array()),
                         Helpers::issetAndHasValueOrAssignDefault($item['conditions'], array()),
                         Helpers::issetAndHasValueOrAssignDefault($item['associatedModel'], null)
@@ -179,6 +183,8 @@ class Cart
                     $id['name'],
                     $id['price'],
                     $id['quantity'],
+                    $id['accumulates'],
+                    $id['frequency'],
                     Helpers::issetAndHasValueOrAssignDefault($id['attributes'], array()),
                     Helpers::issetAndHasValueOrAssignDefault($id['conditions'], array()),
                     Helpers::issetAndHasValueOrAssignDefault($id['associatedModel'], null)
@@ -193,6 +199,8 @@ class Cart
             'name' => $name,
             'price' => Helpers::normalizePrice($price),
             'quantity' => $quantity,
+            'accumulates' => $accumulates,
+            'frequency' => $frequency,
             'attributes' => new ItemAttributeCollection($attributes),
             'conditions' => $conditions
         );

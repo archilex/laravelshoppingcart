@@ -42,7 +42,7 @@ class CartTest extends PHPUnit\Framework\TestCase
 
     public function test_cart_can_add_item()
     {
-        $this->cart->add(455, 'Sample Item', 100.99, 2, array());
+        $this->cart->add(455, 'Sample Item', 100.99, 2, false, null, array());
 
         $this->assertFalse($this->cart->isEmpty(), 'Cart should not be empty');
         $this->assertEquals(1, $this->cart->getContent()->count(), 'Cart content should be 1');
@@ -57,6 +57,8 @@ class CartTest extends PHPUnit\Framework\TestCase
             'name' => 'Sample Item',
             'price' => 67.99,
             'quantity' => 4,
+            'accumulates' => true,
+            'frequency' => 1,
             'attributes' => array()
         );
 
@@ -76,6 +78,8 @@ class CartTest extends PHPUnit\Framework\TestCase
                 'name' => 'Sample Item 1',
                 'price' => 67.99,
                 'quantity' => 4,
+                'accumulates' => true,
+                'frequency' => 1,
                 'attributes' => array()
             ),
             array(
@@ -83,13 +87,17 @@ class CartTest extends PHPUnit\Framework\TestCase
                 'name' => 'Sample Item 2',
                 'price' => 69.25,
                 'quantity' => 4,
+                'accumulates' => false,
+                'frequency' => null,
                 'attributes' => array()
             ),
             array(
                 'id' => 856,
                 'name' => 'Sample Item 3',
-                'price' => 50.25,
                 'quantity' => 4,
+                'price' => 50.25,
+                'accumulates' => false,
+                'frequency' => null,
                 'attributes' => array()
             ),
         );
@@ -106,7 +114,9 @@ class CartTest extends PHPUnit\Framework\TestCase
             'id' => 456,
             'name' => 'Sample Item 1',
             'price' => 67.99,
-            'quantity' => 4
+            'quantity' => 4,
+            'accumulates' => true,
+            'frequency' => 1,
         );
 
         $this->cart->add($item);
@@ -121,6 +131,8 @@ class CartTest extends PHPUnit\Framework\TestCase
             'name' => 'Sample Item 1',
             'price' => 67.99,
             'quantity' => 4,
+            'accumulates' => true,
+            'frequency' => 1,
             'attributes' => array(
                 'product_id' => '145',
                 'color' => 'red'
@@ -154,6 +166,8 @@ class CartTest extends PHPUnit\Framework\TestCase
             'name' => 'Sample Item 1',
             'price' => 67.99,
             'quantity' => 4,
+            'accumulates' => true,
+            'frequency' => 1,
             'attributes' => array(
                 'size' => 'L',
                 'color' => 'blue'
@@ -178,6 +192,8 @@ class CartTest extends PHPUnit\Framework\TestCase
                 'name' => 'Sample Item 1',
                 'price' => 67.99,
                 'quantity' => 3,
+                'accumulates' => true,
+                'frequency' => 1,
                 'attributes' => array()
             ),
             array(
@@ -185,6 +201,8 @@ class CartTest extends PHPUnit\Framework\TestCase
                 'name' => 'Sample Item 2',
                 'price' => 69.25,
                 'quantity' => 1,
+                'accumulates' => false,
+                'frequency' => null,
                 'attributes' => array()
             ),
         );
@@ -219,6 +237,8 @@ class CartTest extends PHPUnit\Framework\TestCase
                 'name' => 'Sample Item 1',
                 'price' => 67.99,
                 'quantity' => 3,
+                'accumulates' => true,
+                'frequency' => 1, 
                 'attributes' => array()
             ),
         );
@@ -256,6 +276,8 @@ class CartTest extends PHPUnit\Framework\TestCase
                 'name' => 'Sample Item 1',
                 'price' => 67.99,
                 'quantity' => 4,
+                'accumulates' => true,
+                'frequency' => 1,
                 'attributes' => array()
             ),
             array(
@@ -263,6 +285,8 @@ class CartTest extends PHPUnit\Framework\TestCase
                 'name' => 'Sample Item 2',
                 'price' => 69.25,
                 'quantity' => 4,
+                'accumulates' => false,
+                'frequency' => null,
                 'attributes' => array()
             ),
             array(
@@ -270,6 +294,8 @@ class CartTest extends PHPUnit\Framework\TestCase
                 'name' => 'Sample Item 3',
                 'price' => 50.25,
                 'quantity' => 4,
+                'accumulates' => true,
+                'frequency' => 1,
                 'attributes' => array()
             ),
         );
@@ -292,6 +318,8 @@ class CartTest extends PHPUnit\Framework\TestCase
                 'name' => 'Sample Item 1',
                 'price' => 67.99,
                 'quantity' => 1,
+                'accumulates' => true,
+                'frequency' => 1,
                 'attributes' => array()
             ),
             array(
@@ -299,6 +327,8 @@ class CartTest extends PHPUnit\Framework\TestCase
                 'name' => 'Sample Item 2',
                 'price' => 69.25,
                 'quantity' => 1,
+                'accumulates' => true,
+                'frequency' => 1,
                 'attributes' => array()
             ),
             array(
@@ -306,6 +336,8 @@ class CartTest extends PHPUnit\Framework\TestCase
                 'name' => 'Sample Item 3',
                 'price' => 50.25,
                 'quantity' => 1,
+                'accumulates' => false,
+                'frequency' => null,
                 'attributes' => array()
             ),
         );
@@ -328,6 +360,8 @@ class CartTest extends PHPUnit\Framework\TestCase
                 'name' => 'Sample Item 1',
                 'price' => 67.99,
                 'quantity' => 3,
+                'accumulates' => true,
+                'frequency' => 1,
                 'attributes' => array()
             ),
             array(
@@ -335,6 +369,8 @@ class CartTest extends PHPUnit\Framework\TestCase
                 'name' => 'Sample Item 2',
                 'price' => 69.25,
                 'quantity' => 1,
+                'accumulates' => true,
+                'frequency' => 1,
                 'attributes' => array()
             ),
         );
@@ -357,6 +393,8 @@ class CartTest extends PHPUnit\Framework\TestCase
                 'name' => 'Sample Item 1',
                 'price' => 67.99,
                 'quantity' => 3,
+                'accumulates' => true,
+                'frequency' => 1,
                 'attributes' => array()
             ),
             array(
@@ -364,6 +402,8 @@ class CartTest extends PHPUnit\Framework\TestCase
                 'name' => 'Sample Item 2',
                 'price' => 69.25,
                 'quantity' => 1,
+                'accumulates' => true,
+                'frequency' => 1,
                 'attributes' => array()
             ),
         );
@@ -390,6 +430,8 @@ class CartTest extends PHPUnit\Framework\TestCase
                 'name' => 'Sample Item 1',
                 'price' => 67.99,
                 'quantity' => 3,
+                'accumulates' => true,
+                'frequency' => 1,
                 'attributes' => array()
             ),
             array(
@@ -397,6 +439,8 @@ class CartTest extends PHPUnit\Framework\TestCase
                 'name' => 'Sample Item 2',
                 'price' => 69.25,
                 'quantity' => 1,
+                'accumulates' => true,
+                'frequency' => 1,
                 'attributes' => array()
             ),
         );
@@ -442,6 +486,8 @@ class CartTest extends PHPUnit\Framework\TestCase
                 'name' => 'Sample Item 1',
                 'price' => 67.99,
                 'quantity' => 3,
+                'accumulates' => true,
+                'frequency' => 1,
                 'attributes' => array()
             ),
             array(
@@ -449,6 +495,8 @@ class CartTest extends PHPUnit\Framework\TestCase
                 'name' => 'Sample Item 2',
                 'price' => 69.25,
                 'quantity' => 1,
+                'accumulates' => true,
+                'frequency' => 1,
                 'attributes' => array()
             ),
         );
@@ -471,6 +519,8 @@ class CartTest extends PHPUnit\Framework\TestCase
                 'name' => 'Sample Item 1',
                 'price' => 67.99,
                 'quantity' => 3,
+                'accumulates' => true,
+                'frequency' => 1,
                 'attributes' => array()
             ),
             array(
@@ -478,6 +528,8 @@ class CartTest extends PHPUnit\Framework\TestCase
                 'name' => 'Sample Item 2',
                 'price' => 69.25,
                 'quantity' => 1,
+                'accumulates' => true,
+                'frequency' => 1,
                 'attributes' => array()
             ),
         );
@@ -498,6 +550,8 @@ class CartTest extends PHPUnit\Framework\TestCase
             'name' => 'Sample Item',
             'price' => 67.99,
             'quantity' => 4,
+            'accumulates' => true,
+            'frequency' => 1,
             'attributes' => array(),
             'associatedModel' => MockProduct::class
         );
@@ -510,7 +564,7 @@ class CartTest extends PHPUnit\Framework\TestCase
         $this->assertEquals(1, $this->cart->getContent()->count(), 'Cart should have 1 item on it');
         $this->assertEquals(456, $this->cart->getContent()->first()['id'], 'The first content must have ID of 456');
         $this->assertEquals('Sample Item', $this->cart->getContent()->first()['name'], 'The first content must have name of "Sample Item"');
-        $this->assertInstanceOf('Darryldecode\Tests\helpers\MockProduct', $addedItem->model);
+        $this->assertInstanceOf('Darryldecode\tests\helpers\MockProduct', $addedItem->model);
     }
 
     public function test_cart_can_add_items_with_multidimensional_array_with_associated_model()
@@ -521,6 +575,8 @@ class CartTest extends PHPUnit\Framework\TestCase
                 'name' => 'Sample Item 1',
                 'price' => 67.99,
                 'quantity' => 4,
+                'accumulates' => true,
+                'frequency' => 1,
                 'attributes' => array(),
                 'associatedModel' => MockProduct::class
             ),
@@ -529,6 +585,8 @@ class CartTest extends PHPUnit\Framework\TestCase
                 'name' => 'Sample Item 2',
                 'price' => 69.25,
                 'quantity' => 4,
+                'accumulates' => true,
+                'frequency' => 1,
                 'attributes' => array(),
                 'associatedModel' => MockProduct::class
             ),
@@ -537,6 +595,8 @@ class CartTest extends PHPUnit\Framework\TestCase
                 'name' => 'Sample Item 3',
                 'price' => 50.25,
                 'quantity' => 4,
+                'accumulates' => true,
+                'frequency' => 1,
                 'attributes' => array(),
                 'associatedModel' => MockProduct::class
             ),

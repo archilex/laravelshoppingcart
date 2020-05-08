@@ -83,7 +83,7 @@ class ItemTest extends PHPUnit\Framework\TestCase
             'value' => '-25',
         ));
 
-        $this->cart->add(455, 'Sample Item', 100.99, 2, array(), [$itemCondition1, $itemCondition2]);
+        $this->cart->add(455, 'Sample Item', 100.99, 2, false, 1, array(), [$itemCondition1, $itemCondition2]);
 
         $item = $this->cart->get(455);
 
