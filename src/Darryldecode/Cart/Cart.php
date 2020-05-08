@@ -156,7 +156,7 @@ class Cart
      * @return $this
      * @throws InvalidItemException
      */
-    public function add($id, $name = null, $price = null, $quantity = null, $accumulates = null, $frequency = null, $attributes = array(), $conditions = array(), $associatedModel = null)
+    public function add($id, $name = null, $price = null, $quantity = null, $accumulates = null, $frequency = 0, $attributes = array(), $conditions = array(), $associatedModel = null)
     {
         // if the first argument is an array,
         // we will need to call add again
@@ -708,6 +708,8 @@ class Cart
             'id' => 'required',
             'price' => 'required|numeric',
             'quantity' => 'required|numeric|min:1',
+            'accumulates' => 'required',
+            'frequency' => 'required|numeric',
             'name' => 'required',
         );
 
