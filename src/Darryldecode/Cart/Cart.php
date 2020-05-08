@@ -709,6 +709,8 @@ class Cart
             'price' => 'required|numeric',
             'quantity' => 'required|numeric|min:1',
             'name' => 'required',
+            'accumulates' => 'required',
+            'frequency' => 'required',
         );
 
         $validator = CartItemValidator::make($item, $rules);
