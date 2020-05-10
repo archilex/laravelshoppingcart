@@ -46,6 +46,11 @@ class ItemCollection extends Collection
         return Helpers::formatValue($this->price * $this->quantity, $this->config['format_numbers'], $this->config);
     }
 
+    public function getFrequencyText()
+    {
+        return Helpers::formatFrequency($this->frequency);
+    }
+
     public function __get($name)
     {
         if ($this->has($name) || $name == 'model') {

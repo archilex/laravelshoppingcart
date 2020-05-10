@@ -75,4 +75,19 @@ class Helpers {
             return $value;
         }
     }
+
+    public static function formatFrequency($value)
+    {
+        if ($value === 1) {
+            return 'Monthly';
+        } elseif ($value === 3) {
+            return 'Quarterly';
+        } elseif ($value === 6) {
+            return 'Semiannually';
+        } elseif ($value === 12) {
+            return 'Annually';
+        } else {
+            return 'One Time';
+        }
+    }
 }
